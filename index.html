@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080c12">
+<meta name="description" content="Huzefa Sadik Ravat — aspiring penetration tester and cybersecurity enthusiast.">
+<title>Huzefa Ravat | Cybersecurity Portfolio</title>
+<style>
+:root{--bg:#080c12;--panel:#0f1722;--panel2:#111d2a;--text:#e7edf5;--muted:#9aabba;--accent:#53f3b2;--line:#233344;--shadow:0 12px 35px #0005}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.65}
+body.light{--bg:#f3f7fa;--panel:#fff;--panel2:#edf4f7;--text:#172331;--muted:#526273;--accent:#087e62;--line:#d7e0e7;--shadow:0 12px 30px #16334a12}
+a{color:inherit;text-decoration:none}button{font:inherit}
+.wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+nav{position:sticky;top:0;z-index:10;background:var(--bg);background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav-inner{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+.brand{font-family:ui-monospace,monospace;font-weight:800;letter-spacing:-.04em}.brand span{color:var(--accent)}
+.nav-links{display:flex;gap:20px;align-items:center;font-size:.9rem;color:var(--muted)}.nav-links a:hover{color:var(--accent)}
+.theme{border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:10px;padding:8px 11px;cursor:pointer}
+.hero{padding:92px 0 78px;display:grid;grid-template-columns:1.35fr .8fr;align-items:center;gap:50px;min-height:590px}
+.eyebrow{font:600 .82rem ui-monospace,monospace;color:var(--accent);letter-spacing:.12em;text-transform:uppercase}
+h1{font-size:clamp(2.6rem,6vw,5.1rem);line-height:1.04;letter-spacing:-.065em;margin:18px 0}
+h1 span{color:var(--accent)}h2{font-size:clamp(1.8rem,4vw,2.5rem);letter-spacing:-.045em;line-height:1.15;margin:0 0 15px}h3{margin:0 0 8px;font-size:1.12rem}
+.lead{font-size:1.12rem;color:var(--muted);max-width:650px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line);padding:11px 16px;border-radius:10px;font-weight:700;transition:.2s}
+.btn.primary{background:var(--accent);color:#06130e;border-color:var(--accent)}.btn:hover{transform:translateY(-2px);box-shadow:0 8px 25px #53f3b220}
+.terminal{background:#070b10;color:#dce9f1;border:1px solid #243746;border-radius:16px;box-shadow:var(--shadow);overflow:hidden;font:.88rem/1.9 ui-monospace,monospace}
+.terminal-top{display:flex;align-items:center;gap:7px;padding:13px 16px;border-bottom:1px solid #243746;color:#8ea3b4}.dot{width:9px;height:9px;border-radius:50%;background:#ff6b6b}.dot:nth-child(2){background:#f8c45c}.dot:nth-child(3){background:#53f3b2}.terminal-body{padding:20px}.prompt{color:#53f3b2}.term-muted{color:#8ea3b4}.cursor{display:inline-block;width:8px;height:15px;background:#53f3b2;vertical-align:middle;animation:blink 1s steps(2) infinite}@keyframes blink{50%{opacity:0}}
+section{padding:72px 0;border-top:1px solid var(--line)}.section-intro{max-width:680px;color:var(--muted);margin-bottom:28px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:22px;transition:transform .2s,border-color .2s,box-shadow .2s}.card:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:var(--shadow)}
+.card p{color:var(--muted);margin:8px 0 14px}.tag-row{display:flex;gap:7px;flex-wrap:wrap;margin:14px 0}.tag{font:.77rem ui-monospace,monospace;border:1px solid var(--line);border-radius:7px;padding:4px 8px;color:var(--muted)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}.info-list{list-style:none;padding:0;margin:18px 0}.info-list li{padding:9px 0;border-bottom:1px solid var(--line)}.info-list strong{color:var(--accent);font-weight:600}
+.skill-groups{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.skill-groups .card{padding:20px}.skill-tags{display:flex;flex-wrap:wrap;gap:8px}.skill-tags span{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:7px 10px;font-size:.88rem}
+.project-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.icon{font:1.35rem ui-monospace,monospace;color:var(--accent)}.small-link{color:var(--accent);font-weight:700;font-size:.9rem}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}.filter{border:1px solid var(--line);border-radius:9px;padding:8px 12px;background:var(--panel);color:var(--muted);cursor:pointer}.filter.active,.filter:hover{background:var(--accent);color:#06130e;border-color:var(--accent)}
+.machine-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.machine{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:15px}.machine strong{display:block}.machine small{color:var(--muted)}.badge{display:inline-block;margin-top:10px;background:#153b30;color:#70f6bf;border-radius:5px;padding:3px 7px;font:.72rem ui-monospace,monospace}.light .badge{background:#d8f5e9;color:#086344}
+.timeline{border-left:2px solid var(--line);margin:28px 0 0 9px;padding-left:25px;display:grid;gap:20px}.step{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px}.step:before{content:"";position:absolute;left:-33px;top:23px;width:13px;height:13px;background:var(--accent);border-radius:50%;box-shadow:0 0 0 5px var(--bg)}.status{font:.75rem ui-monospace,monospace;color:var(--accent)}
+.contact-box{display:flex;justify-content:space-between;align-items:center;gap:25px;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:30px}.socials{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.socials a{border:1px solid var(--line);padding:8px 12px;border-radius:9px;color:var(--muted)}.socials a:hover{color:var(--accent);border-color:var(--accent)}
+footer{padding:25px 0 35px;color:var(--muted);font-size:.84rem}.footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.reveal{opacity:0;transform:translateY(12px);transition:opacity .55s,transform .55s}.reveal.visible{opacity:1;transform:none}
+@media(max-width:850px){.hero{grid-template-columns:1fr;gap:32px;padding-top:65px}.grid{grid-template-columns:repeat(2,1fr)}.machine-grid{grid-template-columns:repeat(3,1fr)}.nav-links{gap:12px}.about-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.wrap{width:min(100% - 28px,1120px)}.nav-inner{padding:12px 0;flex-wrap:wrap}.nav-links{order:3;width:100%;overflow-x:auto;padding:3px 0 8px;white-space:nowrap}.hero{padding:55px 0}.grid,.skill-groups{grid-template-columns:1fr}.machine-grid{grid-template-columns:repeat(2,1fr)}section{padding:55px 0}.contact-box{align-items:flex-start;flex-direction:column}.terminal{font-size:.78rem}.terminal-body{padding:15px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+
+.contact-form{display:grid;gap:12px;margin-top:20px;max-width:620px}
+.contact-form label{display:grid;gap:6px;color:var(--muted);font-size:.9rem}
+.contact-form input,.contact-form textarea{width:100%;padding:12px 13px;border-radius:9px;border:1px solid var(--line);background:var(--bg);color:var(--text);font:inherit}
+.contact-form input:focus,.contact-form textarea:focus{outline:2px solid var(--accent);outline-offset:2px}
+.contact-form textarea{min-height:130px;resize:vertical}
+.form-note{font-size:.82rem;color:var(--muted);margin:0}
+
+</style>
+</head>
+<body>
+<nav><div class="wrap nav-inner">
+<a class="brand" href="#home">HR<span>.</span>SEC</a>
+<div class="nav-links" aria-label="Main navigation"><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#machines">Labs</a><a href="#roadmap">Roadmap</a><a href="#contact">Contact</a></div>
+<button class="theme" id="themeToggle" type="button" aria-label="Toggle light and dark theme">☼ Theme</button>
+</div></nav>
+<main>
+<header class="wrap hero" id="home">
+<div><div class="eyebrow">Cybersecurity · Offensive Security</div><h1>Huzefa Sadik<br><span>Ravat.</span></h1>
+<p class="lead"><strong>Aspiring Penetration Tester</strong> building practical skills in reconnaissance, vulnerability assessment, and ethical exploitation through authorized practice labs.</p>
+<div class="actions"><a class="btn primary" href="#projects">Explore my work ↘</a><a class="btn" href="mailto:huzefaravat7@gmail.com">Contact me ↗</a></div>
+<div class="tag-row" style="margin-top:24px"><span class="tag">Navsari, Gujarat, India</span><span class="tag">Open to relocation</span><span class="tag">Available for immediate joining</span></div></div>
+<div class="terminal" aria-label="Terminal showing portfolio owner and learning focus"><div class="terminal-top"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span style="margin-left:8px">huzefa@portfolio:~</span></div><div class="terminal-body">
+<div><span class="prompt">$</span> whoami</div><div>huzefa | pentester-in-training</div><br><div><span class="prompt">$</span> cat focus.txt</div><div>Reconnaissance</div><div>Web security testing</div><div>Log analysis &amp; SIEM</div><br><div><span class="prompt">$</span> ./next_step.sh</div><div class="term-muted">Learn. Test ethically. Document. Improve.</div><div><span class="prompt">$</span> <span class="cursor"></span></div></div></div>
+</header>
+<section id="about"><div class="wrap reveal"><div class="eyebrow">01 / About</div><h2>Curious by nature.<br>Careful by practice.</h2><div class="about-grid">
+<div><p class="section-intro">I’m a BCA graduate focused on building a career in offensive security. I practice in legal lab environments and work on understanding how systems, networks, and web applications can be assessed and made more secure.</p><p class="section-intro">My web-development exposure helps me understand how web applications are structured and where security issues can arise. I aim to keep improving my technical fundamentals and reporting skills.</p></div>
+<div class="card"><h3>Quick profile</h3><ul class="info-list"><li><strong>Education</strong> — BCA, 2026</li><li><strong>College</strong> — Naranlala College, Navsari</li><li><strong>University</strong> — Veer Narmad South Gujarat University</li><li><strong>Specialization</strong> — Web Development</li><li><strong>Focus</strong> — Pentesting &amp; security analysis</li></ul></div></div></div></section>
+<section id="skills"><div class="wrap reveal"><div class="eyebrow">02 / Technical toolkit</div><h2>Skills &amp; tools</h2><p class="section-intro">A learning-focused toolkit. Proficiency varies by tool and topic; items marked basic are foundational practice.</p><div class="skill-groups">
+<div class="card"><h3>Penetration testing</h3><div class="skill-tags"><span>Recon &amp; information gathering</span><span>Network scanning</span><span>Enumeration</span><span>Vulnerability assessment</span><span>OWASP Top 10 · basic</span><span>Exploitation fundamentals</span><span>Hash cracking · basic</span><span>Security reporting</span></div></div>
+<div class="card"><h3>Tools</h3><div class="skill-tags"><span>Nmap</span><span>Kali Linux</span><span>Burp Suite</span><span>Metasploit · basic</span><span>OWASP ZAP</span><span>Nikto</span><span>Gobuster / Dirb</span><span>SQLmap</span><span>Hydra</span><span>John the Ripper</span><span>Wireshark</span></div></div>
+<div class="card"><h3>SIEM &amp; log analysis</h3><div class="skill-tags"><span>Splunk</span><span>Failed-login analysis</span><span>Suspicious activity detection</span><span>Event investigation</span></div></div>
+<div class="card"><h3>Networking &amp; operating systems</h3><div class="skill-tags"><span>TCP/IP</span><span>DNS</span><span>HTTP / HTTPS</span><span>Subnetting</span><span>Ports &amp; protocols</span><span>Kali Linux</span><span>Windows</span></div></div>
+</div></div></section>
+<section id="projects"><div class="wrap reveal"><div class="eyebrow">03 / Selected practice</div><h2>Projects &amp; investigations</h2><p class="section-intro">Practice projects focused on learning, evidence collection, and communicating findings. Add your published reports when ready.</p><div class="grid">
+<article class="card"><div class="project-top"><h3>Network Scanning &amp; Enumeration</h3><span class="icon">01</span></div><p>Used Nmap in a lab to identify live hosts, open ports, and exposed services; organized observations and remediation notes.</p><div class="tag-row"><span class="tag">Nmap</span><span class="tag">Recon</span><span class="tag">Reporting</span></div><a class="small-link" href="https://github.com/" target="_blank" rel="noopener">Read write-up — [ADD LINK] ↗</a></article>
+<article class="card"><div class="project-top"><h3>Web App Vulnerability Assessment</h3><span class="icon">02</span></div><p>Practice-lab assessment using web proxies and scanners, directory enumeration, and severity-based finding documentation.</p><div class="tag-row"><span class="tag">Burp Suite</span><span class="tag">ZAP</span><span class="tag">Gobuster</span><span class="tag">Nikto</span></div><a class="small-link" href="https://github.com/" target="_blank" rel="noopener">Read write-up — [ADD LINK] ↗</a></article>
+<article class="card"><div class="project-top"><h3>Log Analysis with Splunk</h3><span class="icon">03</span></div><p>Reviewed sample logs to identify repeated failed logins and unusual traffic patterns for further investigation.</p><div class="tag-row"><span class="tag">Splunk</span><span class="tag">SIEM</span><span class="tag">Log analysis</span></div><a class="small-link" href="https://github.com/" target="_blank" rel="noopener">Read write-up — [ADD LINK] ↗</a></article>
+</div></div></section>
+<section id="machines"><div class="wrap reveal"><div class="eyebrow">04 / Authorized lab practice</div><h2>VulnHub machine log</h2><p class="section-intro">Practice targets for learning enumeration and exploitation in intentionally vulnerable environments. The “Rooted” label is a placeholder—verify your completion status and link a write-up before publishing.</p>
+<div class="filters" role="group" aria-label="Filter lab machines"><button class="filter active" data-filter="all">All machines</button><button class="filter" data-filter="rooted">Rooted</button><button class="filter" data-filter="writeup">Write-up pending</button></div>
+<div class="machine-grid" id="machineGrid">
+<article class="machine" data-status="rooted"><strong>Jangow: 1.0.1</strong><small>VulnHub</small><span class="badge">Rooted · verify</span></article>
+<article class="machine" data-status="rooted"><strong>Empire: Breakout</strong><small>VulnHub</small><span class="badge">Rooted · verify</span></article>
+<article class="machine" data-status="rooted"><strong>EvilBox: One</strong><small>VulnHub</small><span class="badge">Rooted · verify</span></article>
+<article class="machine" data-status="rooted"><strong>Beelzebub: 1</strong><small>VulnHub</small><span class="badge">Rooted · verify</span></article>
+<article class="machine" data-status="rooted"><strong>Funbox</strong><small>VulnHub</small><span class="badge">Rooted · verify</span></article>
+<article class="machine" data-status="rooted"><strong>The Planets: Venus</strong><small>VulnHub</small><span class="badge">Rooted · verify</span></article>
+<article class="machine" data-status="rooted"><strong>Coffee Addicts 1</strong><small>VulnHub</small><span class="badge">Rooted · verify</span></article>
+<article class="machine" data-status="rooted"><strong>Sunset: 1</strong><small>VulnHub</small><span class="badge">Rooted · verify</span></article>
+<article class="machine" data-status="rooted"><strong>Linsecurity</strong><small>VulnHub</small><span class="badge">Rooted · verify</span></article>
+<article class="machine" data-status="rooted"><strong>Black Widow</strong><small>VulnHub</small><span class="badge">Rooted · verify</span></article>
+<article class="machine" data-status="rooted"><strong>System Failure</strong><small>VulnHub</small><span class="badge">Rooted · verify</span></article>
+</div></div></section>
+<section id="experience"><div class="wrap reveal"><div class="eyebrow">05 / Experience</div><h2>Learning through experience</h2><div class="timeline"><div class="step"><span class="status">OCT 2025 · 20 DAYS</span><h3>Web Development Intern — Webestica Studio</h3><p class="section-intro" style="margin:6px 0 0">Chikhli, Gujarat. Gained exposure to web development, supporting an understanding of web application structure relevant to security testing.</p></div></div></div></section>
+<section id="roadmap"><div class="wrap reveal"><div class="eyebrow">06 / Continuous learning</div><h2>Certification roadmap</h2><p class="section-intro">Learning goals are shown as goals or in-progress items, not completed certifications.</p><div class="timeline">
+<div class="step"><span class="status">IN PROGRESS</span><h3>Introduction to Cyber Security — Cisco / TryHackMe</h3><p class="section-intro" style="margin:5px 0 0">Foundational cybersecurity learning.</p></div>
+<div class="step"><span class="status">IN PROGRESS</span><h3>CPTE — Mile2</h3><p class="section-intro" style="margin:5px 0 0">Pursuing / learning path.</p></div>
+<div class="step"><span class="status">FUTURE GOAL</span><h3>eJPT or CompTIA PenTest+</h3><p class="section-intro" style="margin:5px 0 0">Build a stronger penetration-testing foundation.</p></div>
+<div class="step"><span class="status">FUTURE GOAL</span><h3>CEH</h3><p class="section-intro" style="margin:5px 0 0">Longer-term certification goal.</p></div>
+</div></div></section>
+<section id="contact"><div class="wrap reveal"><div class="eyebrow">07 / Contact</div><div class="contact-box"><div style="width:100%"><h2>Let’s connect.</h2><p class="section-intro" style="margin:0">Open to entry-level cybersecurity opportunities, internships, and learning conversations.</p>
+<form class="contact-form" id="contactForm">
+<label for="senderName">Your name<input id="senderName" name="name" autocomplete="name" required placeholder="Enter your name"></label>
+<label for="senderEmail">Your email<input id="senderEmail" name="email" type="email" autocomplete="email" required placeholder="you@example.com"></label>
+<label for="senderMessage">Message<textarea id="senderMessage" name="message" required placeholder="Write your message..."></textarea></label>
+<button class="btn primary" type="submit">Prepare email ↗</button>
+<p class="form-note" id="formNote" aria-live="polite">This form opens your default email app with the message prepared; it does not send anything automatically.</p>
+</form>
+<div class="socials">
+<a href="mailto:huzefaravat7@gmail.com">Email</a><a href="https://github.com/" target="_blank" rel="noopener">GitHub — add profile</a><a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn — add profile</a><a href="https://tryhackme.com/" target="_blank" rel="noopener">TryHackMe — add profile</a>
+</div></div></div></div></section>
+</main>
+<footer><div class="wrap footer-row"><span>© <span id="year"></span> Huzefa Sadik Ravat · Built for learning and career growth.</span><span>Ethical-hacking disclaimer: all security testing is performed only in legal, authorized lab environments.</span></div></footer>
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+document.getElementById('themeToggle').addEventListener('click',()=>{document.body.classList.toggle('light');});
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}}),{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+document.querySelectorAll('.filter').forEach(button=>button.addEventListener('click',()=>{
+ document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));button.classList.add('active');
+ const mode=button.dataset.filter;
+ document.querySelectorAll('.machine').forEach(card=>{card.style.display=(mode==='all'||(mode==='rooted'&&card.dataset.status==='rooted')||(mode==='writeup'&&card.dataset.status!=='rooted'))?'':'none';});
+}));
+
+document.getElementById('contactForm').addEventListener('submit', function(event){
+ event.preventDefault();
+ const name = document.getElementById('senderName').value.trim();
+ const email = document.getElementById('senderEmail').value.trim();
+ const message = document.getElementById('senderMessage').value.trim();
+ if (!name || !email || !message) return;
+ const subject = encodeURIComponent('Portfolio contact from ' + name);
+ const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + message);
+ document.getElementById('formNote').textContent = 'Opening your email app. Review the message and press Send to deliver it.';
+ window.location.href = 'mailto:huzefaravat7@gmail.com?subject=' + subject + '&body=' + body;
+});
+
+</script>
+</body>
+</html>
